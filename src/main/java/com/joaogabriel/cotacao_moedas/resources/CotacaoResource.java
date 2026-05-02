@@ -10,12 +10,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.joaogabriel.cotacao_moedas.service.CotacaoService;
+
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/cotacao")
 public class CotacaoResource {
 
-    @GetMapping("/convert")
+	private final CotacaoService service;
+	
+    public CotacaoResource(CotacaoService service) {
+		super();
+		this.service = service;
+	}
+
+	@SuppressWarnings("unchecked")
+	@GetMapping("/convert")
     public ResponseEntity<?> conversao(
             @RequestParam String from,
             @RequestParam String to,
@@ -45,5 +55,15 @@ public class CotacaoResource {
         } catch (Exception e) {
             return ResponseEntity.status(400).body(Map.of("erro", e.getMessage()));
         }
+    }
+    
+    @GetMapping("/currencies")
+    public ResponseEntity<Map<String, String>> getCurrencies(){
+    	Map<String, String> currencies = service.moedas();
+    	
+    	if(currencies.isEmpty()) {
+    		return ResponseEntity.status(503).build();
+    	}
+    	return ResponseEntity.ok().body(currencies);
     }
 }
