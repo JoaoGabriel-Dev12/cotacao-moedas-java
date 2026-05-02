@@ -51,7 +51,7 @@ Retorna todas as moedas disponíveis para conversão.
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/cotacao-moedas
+git clone https://github.com/JoaoGabriel-Dev12/cotacao-moedas
 
 # Entre na pasta
 cd cotacao-moedas
