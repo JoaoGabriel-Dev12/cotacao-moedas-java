@@ -1,42 +1,43 @@
 package com.joaogabriel.cotacao_moedas.response;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class CotacaoResponse {
-
-	private String code;
-	private String codein;
+public class CotacaoResponse implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
+	private String from;
+	private String to;
 	private BigDecimal amount;
-	private BigDecimal bid;
-	private BigDecimal convert_amount;
+	private BigDecimal rate;
+	private BigDecimal result;
 	
 	public CotacaoResponse() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CotacaoResponse(String code, String codein, BigDecimal amount, BigDecimal bid, BigDecimal convert_amount) {
-		super();
-		this.code = code;
-		this.codein = codein;
+	public CotacaoResponse(String from, String to, BigDecimal amount, BigDecimal rate, BigDecimal result) {
+		this.from = from;
+		this.to = to;
 		this.amount = amount;
-		this.bid = bid;
-		this.convert_amount = convert_amount;
+		this.rate = rate;
+		this.result = result;
 	}
 
-	public String getCode() {
-		return code;
+	public String getFrom() {
+		return from;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setFrom(String from) {
+		this.from = from;
 	}
 
-	public String getCodein() {
-		return codein;
+	public String getTo() {
+		return to;
 	}
 
-	public void setCodein(String codein) {
-		this.codein = codein;
+	public void setTo(String to) {
+		this.to = to;
 	}
 
 	public BigDecimal getAmount() {
@@ -47,21 +48,19 @@ public class CotacaoResponse {
 		this.amount = amount;
 	}
 
-	public BigDecimal getBid() {
-		return bid;
+	public BigDecimal getRate() {
+		return rate;
 	}
 
-	public void setBid(BigDecimal bid) {
-		this.bid = bid;
+	public void setRate(BigDecimal rate) {
+		this.rate = rate;
 	}
 
-	public BigDecimal getConvert_amount() {
-		return convert_amount;
+	public BigDecimal getResult() {
+		return result;
 	}
 
-	public void setConvert_amount(BigDecimal convert_amount) {
-		this.convert_amount = convert_amount;
+	public void setResult(BigDecimal result) {
+		this.result = result;
 	}
-	
-	
 }
