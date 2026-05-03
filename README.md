@@ -5,7 +5,7 @@ consumindo a [Frankfurter API](https://frankfurter.dev) como fonte de cotações
 
 ## 🚀 Deploy
 
-- **API:** https://cotacao-moedas-java-production.up.railway.app
+- **API:** https://cotacao-moedas-java.onrender.com/
 - **Frontend:** https://kambyo-conversor-moedas.vercel.app/
 
 ## 🛠️ Tecnologias utilizadas
@@ -14,7 +14,7 @@ consumindo a [Frankfurter API](https://frankfurter.dev) como fonte de cotações
 - Spring Boot
 - RestTemplate
 - Frankfurter API
-- Railway (deploy)
+- Render (deploy)
 
 ## 📌 Endpoints
 
